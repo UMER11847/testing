@@ -1,0 +1,11 @@
+CREATE TABLE tasks (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  title TEXT,
+  description TEXT,
+  deadline TEXT,
+  priority TEXT,
+  status TEXT,
+  assigned_to INTEGER,
+  created_by INTEGER,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);

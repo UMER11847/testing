@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Task Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container-full">
+        <header>
+            <h1>Task Dashboard</h1>
+            <p id="welcomeMessage">Welcome, User!</p>
+            <button id="logoutButton" class="button secondary">Logout</button>
+        </header>
+
+        <div class="header-actions">
+            <button id="notificationBtn" class="button small">🔔 Notifications <span id="notifCount"
+                    class="badge">0</span></button>
+            <button id="reportsBtn" class="button small">📊 Reports</button>
+        </div>
+        </header>
+
+        <div id="notificationPanel" class="card hidden">
+            <h3>Notifications</h3>
+            <div id="notificationList"></div>
+            <button id="closeNotifBtn" class="button secondary small">Close</button>
+        </div>
+
+        <div id="reportsSection" class="card hidden">
+            <h3>Performance Reports</h3>
+            <div class="report-grid">
+                <div class="report-card">
+                    <h4>Tasks by Status</h4>
+                    <ul id="statusReportList"></ul>
+                </div>
+                <div class="report-card">
+                    <h4>User Workload</h4>
+                    <ul id="userReportList"></ul>
+                </div>
+            </div>
+            <button id="closeReportsBtn" class="button secondary small">Close</button>
+        </div>
+
+        <div id="createTaskSection" class="card hidden">
+            <!-- existing create task content -->
+            <h3>Create New Task</h3>
+            <form id="taskForm">
+                <input name="title" placeholder="Task Title" required>
+                <textarea name="description" placeholder="Description"></textarea>
+                <input type="date" name="deadline" title="Deadline Date">
+
+                <label for="priority">Priority:</label>
+                <select name="priority" id="priority">
+                    <option>Low</option>
+                    <option>Medium</option>
+                    <option>High</option>
+                </select>
+
+                <input name="assigned_to" type="number" placeholder="Assign to User ID (Optional)">
+
+                <button type="submit" class="button">Create Task</button>
+            </form>
+        </div>
+
+        <div class="filters">
+            <input type="text" id="searchInput" placeholder="Search tasks by title/description...">
+
+            <label for="statusFilter">Status:</label>
+            <select id="statusFilter">
+                <option value="All">All Statuses</option>
+                <option value="Pending">Pending</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Completed">Completed</option>
+            </select>
+
+            <button id="applyFilters" class="button small">Apply</button>
+        </div>
+
+        <div id="taskList">
+        </div>
+    </div>
+
+    <script src="js/tasks.js"></script>
+</body>
+
+</html>
